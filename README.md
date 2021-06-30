@@ -34,17 +34,20 @@
 ## Sample Screen view:
 
 THE HANGMAN GAME
-================
+\================
 
 Turns remaining: 1
 
-              +---+
-              |   |
-              O   |
-             /|\  |
-             /    |
-                  |
-            =========
+
+\              +---+
+\              |   |
+\              O   |
+\             /|\  |
+\             /    |
+\                  |
+\            =========
 \* \* \* \* L \* \* \*
+
 Already Guessed: Q I S W L A
+
 New Guess: s

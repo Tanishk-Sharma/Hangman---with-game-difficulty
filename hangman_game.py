@@ -43,9 +43,9 @@ while True:
         
     # select hangman_stage_jumper: an offset that decides how many stages to skip based on difficulty
     HANGMAN_STAGE_JUMPER = (len(hangman.keys())-1)/NUMBER_OF_TURNS
-	# subtracting 1 from len(hangman.keys() because the last hangman stage is to be shown at game over.
+    # subtracting 1 from len(hangman.keys() because the last hangman stage is to be shown at game over.
     CURRENT_STAGE = 0
-	
+    
     ALREADY_GUESSED_LETTERS = set() # utility for storing already guessed letters
     
     clear_screen()
@@ -83,7 +83,8 @@ while True:
             CURRENT_STAGE += HANGMAN_STAGE_JUMPER
         
         clear_screen()
-
+    
+    print()
     if NUMBER_OF_TURNS == 0:
         show_game_banner()
         print(hangman[12])

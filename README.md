@@ -5,7 +5,7 @@
 - Start terminal/command prompt
 - Run: ```python hangman_game.py```
 
-- User has to select 1 of 3 difficulty modes:
+- Player has to select 1 of 3 difficulty modes:
     1. Easy
     2. Medium
     3. Difficult

@@ -33,21 +33,5 @@
 
 ## Sample Screen view:
 
-THE HANGMAN GAME
-\================
+![image](https://user-images.githubusercontent.com/32167236/124018373-663e9080-da05-11eb-9305-4f424fb4ffe5.png)
 
-Turns remaining: 1
-
-
-\              +---+
-\              |   |
-\              O   |
-\             /|\  |
-\             /    |
-\                  |
-\            =========
-\* \* \* \* L \* \* \*
-
-Already Guessed: Q I S W L A
-
-New Guess: s

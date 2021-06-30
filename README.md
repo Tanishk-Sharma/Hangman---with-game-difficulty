@@ -45,6 +45,6 @@ Turns remaining: 1
              /    |
                   |
             =========
-* * * * L * * *
+\* \* \* \* L \* \* \*
 Already Guessed: Q I S W L A
 New Guess: s

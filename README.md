@@ -17,12 +17,11 @@
 
 ## Game Difficulty modes:
 
-| Mode      | Number of turns | Minimum length of chosen word |
-|-----------|-----------------|-------------------------------|
-| EASY      | 12              | 6                             |
-| MEDIUM    | 6               | 8                             |
-| DIFFICULT | 3               | 10                            |
-
+| Modes     | Number of turns | Length of chosen word                                |
+|-----------|-----------------|------------------------------------------------------|
+| EASY      | 12              | 3 times the number of unique letters in chosen word  |
+| MEDIUM    | 6               | 2 times the number of unique letters in chosen word  |
+| DIFFICULT | 3               | Equal to the number of unique letters in chosen word |
 
 ## Files explained:
 

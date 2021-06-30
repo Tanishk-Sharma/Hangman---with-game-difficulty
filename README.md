@@ -32,5 +32,6 @@
 
 ## Sample Screen view:
 
-![image](https://user-images.githubusercontent.com/32167236/124018373-663e9080-da05-11eb-9305-4f424fb4ffe5.png)
+![image](https://user-images.githubusercontent.com/32167236/124026681-9db23a80-da0f-11eb-89c5-d06c73bd134a.png)
+
 

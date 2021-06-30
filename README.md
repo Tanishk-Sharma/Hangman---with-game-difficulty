@@ -25,9 +25,9 @@
 
 ## Files explained:
 
-1. hangman_game.py: This is the code that runs the entire game.
-2. hangman_stages.py: This is simple to store the hangman appearance as the game progress, i.e. as the number of turns remaing decreases.
-3. easy.py, medium.py, difficult.py: These files store the list of words according to word length permitted by the game difficulty respectively.
+1. **hangman_game.py**: This is the code that runs the entire game.
+2. **hangman_stages.py**: This is simple to store the hangman appearance as the game progress, i.e. as the number of turns remaing decreases.
+3. **easy.py, medium.py, difficult.py**: These files store the list of words according to word length permitted by the game difficulty respectively.
 
 
 ## Sample Screen view:

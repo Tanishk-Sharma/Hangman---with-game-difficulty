@@ -4,7 +4,7 @@ import sys
 import os
 import time
 from hangman_stages import hangman
-
+import math
 
 def clear_screen():
     '''Utility to Clear Screen on different platforms'''
@@ -16,7 +16,7 @@ def clear_screen():
 def show_game_banner():
     print('THE HANGMAN GAME')
     print('================')
-    print('')
+    print()
     
     
 while True:
@@ -34,17 +34,18 @@ while True:
     # select difficulty
     DIFFICULTY = menu('Difficulty', {1: 'Easy', 2: 'Medium', 3: 'Difficult'})
     
-    # select number of turns
-    NUMBER_OF_TURNS = [12, 6, 3][DIFFICULTY-1]
-    
-    # select hangman_stage_jumper: decides how many stages to skip based on difficulty
-    HANGMAN_STAGE_JUMPER = [1, 2, 4][DIFFICULTY-1]
-    CURRENT_STAGE = 1
-    
     # select word
     WORD = random.choice([easy.words, medium.words, difficult.words][DIFFICULTY-1]).upper()
-    LETTERS_YET_TO_BE_GUESSED = set(WORD) # utility for storing letters remining to be guessed
+    LETTERS_YET_TO_BE_GUESSED = set(WORD) # Unique set of letters in chosen word
     
+    # select number of turns
+    NUMBER_OF_TURNS = [3, 2, 1][DIFFICULTY-1] * len(set(LETTERS_YET_TO_BE_GUESSED))
+        
+    # select hangman_stage_jumper: an offset that decides how many stages to skip based on difficulty
+    HANGMAN_STAGE_JUMPER = (len(hangman.keys())-1)/NUMBER_OF_TURNS
+	# subtracting 1 from len(hangman.keys() because the last hangman stage is to be shown at game over.
+    CURRENT_STAGE = 0
+	
     ALREADY_GUESSED_LETTERS = set() # utility for storing already guessed letters
     
     clear_screen()
@@ -60,10 +61,12 @@ while True:
             # * * * * * * * *
             # Already Guessed:
             # New Guess:
+        
         print('Turns remaining: ' + str(NUMBER_OF_TURNS))
         # show word - hide letters not yet guessed
         WORD_SO_FAR = [letter if letter in ALREADY_GUESSED_LETTERS else '*' for letter in WORD]
-        print(hangman[CURRENT_STAGE])
+        print(hangman[math.floor(CURRENT_STAGE)])
+        print()
         print(' '.join(WORD_SO_FAR))
         print('Already Guessed: ' + ' '.join(ALREADY_GUESSED_LETTERS))
 
@@ -73,11 +76,12 @@ while True:
             ALREADY_GUESSED_LETTERS.add(GUESSED_LETTER)
         elif GUESSED_LETTER in ALREADY_GUESSED_LETTERS:
             print('You have guessed this letter already.')
-            time.sleep(2)
+            time.sleep(1)
         else:
             ALREADY_GUESSED_LETTERS.add(GUESSED_LETTER)
             NUMBER_OF_TURNS -= 1
             CURRENT_STAGE += HANGMAN_STAGE_JUMPER
+        
         clear_screen()
 
     if NUMBER_OF_TURNS == 0:
@@ -89,7 +93,7 @@ while True:
         print('You Guesses it, Right!! Hangman is saved!')
     print('The word is : ' + WORD)
     
-    choice = input('Press any key to continue, or press q to quit.')
+    choice = input('Press any key to continue, or \'q\' to quit: ')
     if choice in ['q', 'Q']:
         break
     clear_screen()

@@ -32,7 +32,8 @@ while True:
         return choice
 
     # select difficulty
-    DIFFICULTY = menu('Difficulty', {1: 'Easy', 2: 'Medium', 3: 'Difficult'})
+    difficulty_dict = {1: 'Easy', 2: 'Medium', 3: 'Difficult'}
+    DIFFICULTY = menu('Difficulty', difficulty_dict)
     
     # select word
     WORD = random.choice([easy.words, medium.words, difficult.words][DIFFICULTY-1]).upper()
@@ -55,6 +56,10 @@ while True:
         # check letters yet to be guessed exist
     while LETTERS_YET_TO_BE_GUESSED and NUMBER_OF_TURNS > 0:
         show_game_banner()
+        
+        print('Difficulty: ' + difficulty_dict[DIFFICULTY])
+        print()
+        
         # Sample Screen view:
             # Turns remaining: 6
             # Hangman goes here

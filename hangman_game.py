@@ -91,7 +91,7 @@ while True:
         print('Hangman DIED!')
         print('Game Over. You Lost :(')
     else:
-        print('You Guesses it, Right!! Hangman is saved!')
+        print('You Guessed it right!! YOU WON!! Hangman is saved!')
     print('The word is : ' + WORD)
     
     choice = input('Press any key to continue, or \'q\' to quit: ')
